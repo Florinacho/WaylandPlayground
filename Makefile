@@ -1,13 +1,15 @@
 OUTPUT=a.out
 
-SOURCE_FILES=main.c
-#C_FLAGS+=-DXDG
-#SOURCE_FILES+=xdg-shell.c
+#xdg-shell.c 
+SOURCE_FILES=main.c 
 
 CC=gcc
-C_FLAGS=
+C_FLAGS=-Wall -Wextra -g
 L_FLAGS=
 LIBS=wayland-client
+
+#C_FLAGS+=-DXDG
+#SOURCE_FILES+=xdg-shell.c
 
 LIB_FLAGS=$(addprefix -l, $(LIBS))
 OBJECT_FILES=$(SOURCE_FILES:.c=.o)
