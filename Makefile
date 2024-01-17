@@ -1,14 +1,14 @@
 OUTPUT=a.out
 
 #xdg-shell.c 
-SOURCE_FILES=main.c 
+SOURCE_FILES=wl_window.c main.c 
 
 CC=gcc
-C_FLAGS=-Wall -Wextra -g
-L_FLAGS=
-LIBS=wayland-client
+C_FLAGS=-Wall -Wextra -g -std=gnu11
+L_FLAGS= -lrt
+LIBS=rt wayland-client
 
-#C_FLAGS+=-DXDG
+#C_FLAGS+=-DWL_XDG
 #SOURCE_FILES+=xdg-shell.c
 
 LIB_FLAGS=$(addprefix -l, $(LIBS))
